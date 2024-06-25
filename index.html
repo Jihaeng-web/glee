@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글리어학원 시험 응원! 랜덤 룰렛</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:disabled {
+            cursor: not-allowed;
+            background-color: grey;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #wheel {
+            margin-top: 20px;
+            width: 100px;
+            height: 100px;
+            border: 8px solid #000;
+            border-radius: 50%;
+            border-top: 8px solid #ff0000;
+            animation: spin 0s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function startRoulette() {
+            document.getElementById("startScreen").classList.add("hidden");
+            document.getElementById("rouletteScreen").classList.remove("hidden");
+        }
+
+        function getRandomResult() {
+            const wheel = document.getElementById("wheel");
+            wheel.style.animation = "spin 2s linear infinite";
+            setTimeout(() => {
+                const randomNum = Math.random();
+                let result;
+                if (randomNum < 0.05) {
+                    result = "재시면제권";
+                } else {
+                    result = Math.random() < 0.5 ? "초콜릿" : "솜사탕";
+                }
+                document.getElementById("result").innerText = "당첨 결과: " + result;
+                document.getElementById("drawButton").disabled = true;
+                document.getElementById("drawButton").innerText = "추첨 완료";
+                wheel.style.animation = "none";
+            }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <div id="startScreen">
+        <h1>글리어학원 시험 응원 추첨 이벤트!</h1>
+        <p style="font-size: 14px;">시작하려면 터치</p>
+        <button onclick="startRoulette()">터치해서 시작하기</button>
+    </div>
+    <div id="rouletteScreen" class="hidden">
+        <h1>글리어학원 시험 응원! 랜덤 룰렛</h1>
+        <button id="drawButton" onclick="getRandomResult()">추첨하기</button>
+        <div id="wheel"></div>
+        <p id="result"></p>
+    </div>
+</body>
+</html>
