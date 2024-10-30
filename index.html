@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>글리어학원 할로윈</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Creepster&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Noto Sans KR', sans-serif;
             text-align: center;
             margin-top: 50px;
             background-color: #1a1a1a;
+            color: #ff7518;
+        }
+        h1 {
+            font-family: 'Creepster', cursive;
+            font-size: 32px;
             color: #ff7518;
         }
         button {
@@ -21,6 +26,7 @@
             color: #1a1a1a;
             border: none;
             border-radius: 5px;
+            font-family: 'Creepster', cursive;
         }
         button:disabled {
             cursor: not-allowed;
@@ -51,10 +57,7 @@
             font-size: 18px;
             margin-top: 20px;
             color: #ff7518;
-        }
-        h1 {
-            font-size: 24px;
-            color: #ff7518;
+            font-family: 'Creepster', cursive;
         }
     </style>
     <script>
@@ -77,7 +80,7 @@
                 if (randomNum < 0.05) {
                     result = "할로윈 특별 재시면제권 🎃";
                 } else {
-                    result = Math.random() < 0.5 ? "호박 초콜릿 🍫" : "유령 솜사탕 👻";
+                    result = "유령 솜사탕 👻";
                 }
                 message.innerText = "";
                 resultElem.innerText = "당첨 결과: " + result;
