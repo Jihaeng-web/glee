@@ -12,6 +12,7 @@
             margin-top: 50px;
             background-color: #1a1a1a;
             color: #ff7518;
+            overflow: hidden;
         }
         h1 {
             font-family: 'Creepster', cursive;
@@ -59,6 +60,30 @@
             color: #ff7518;
             font-family: 'Creepster', cursive;
         }
+        /* 유령과 호박 오브제 스타일 */
+        .floating-ghost, .floating-pumpkin {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            opacity: 0.8;
+            animation: float 8s infinite ease-in-out;
+        }
+        .floating-ghost {
+            background: url('https://path-to-ghost-image.png') center/cover no-repeat;
+        }
+        .floating-pumpkin {
+            background: url('https://path-to-pumpkin-image.png') center/cover no-repeat;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+        /* 오브제 위치 */
+        .ghost1 { top: 10%; left: 5%; animation-delay: 1s; }
+        .ghost2 { top: 15%; right: 10%; animation-delay: 3s; }
+        .pumpkin1 { bottom: 20%; left: 10%; animation-delay: 2s; }
+        .pumpkin2 { bottom: 25%; right: 15%; animation-delay: 4s; }
     </style>
     <script>
         function startRoulette() {
@@ -92,6 +117,12 @@
     </script>
 </head>
 <body>
+    <!-- 유령과 호박 오브제들 -->
+    <div class="floating-ghost ghost1"></div>
+    <div class="floating-ghost ghost2"></div>
+    <div class="floating-pumpkin pumpkin1"></div>
+    <div class="floating-pumpkin pumpkin2"></div>
+
     <div id="startScreen">
         <h1>글리어학원 할로윈</h1>
         <p style="font-size: 14px;">시작하려면 터치</p>
