@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>글리어학원 할로윈</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Dokdo&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Noto Sans KR', sans-serif;
@@ -15,7 +15,7 @@
             overflow: hidden;
         }
         h1 {
-            font-family: 'Creepster', cursive;
+            font-family: 'Dokdo', cursive;
             font-size: 32px;
             color: #ff7518;
         }
@@ -27,7 +27,7 @@
             color: #1a1a1a;
             border: none;
             border-radius: 5px;
-            font-family: 'Creepster', cursive;
+            font-family: 'Dokdo', cursive;
         }
         button:disabled {
             cursor: not-allowed;
@@ -45,7 +45,6 @@
             border: 8px solid #000;
             border-radius: 50%;
             border-top: 8px solid #ff7518;
-            background: url('https://path-to-halloween-decoration-image.png') center/cover no-repeat;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -58,21 +57,24 @@
             font-size: 18px;
             margin-top: 20px;
             color: #ff7518;
-            font-family: 'Creepster', cursive;
+            font-family: 'Dokdo', cursive;
         }
         /* 유령과 호박 오브제 스타일 */
         .floating-ghost, .floating-pumpkin {
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             opacity: 0.8;
+            border-radius: 50%;
             animation: float 8s infinite ease-in-out;
         }
         .floating-ghost {
-            background: url('https://path-to-ghost-image.png') center/cover no-repeat;
+            background-color: white;
+            box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
         }
         .floating-pumpkin {
-            background: url('https://path-to-pumpkin-image.png') center/cover no-repeat;
+            background-color: orange;
+            box-shadow: 0px 0px 10px 5px rgba(255, 165, 0, 0.5);
         }
         @keyframes float {
             0% { transform: translateY(0); }
